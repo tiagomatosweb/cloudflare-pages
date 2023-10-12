@@ -10,6 +10,7 @@
 
 <script setup>
 const {data, pending} = useLazyAsyncData('page2', () => $fetch('posts', {
-  baseURL: 'https://jsonplaceholder.typicode.com'
+  baseURL: 'https://jsonplaceholder.typicode.com',
+  credentials: 'include',
 }))
 </script>
