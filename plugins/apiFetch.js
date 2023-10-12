@@ -3,21 +3,32 @@ export default defineNuxtPlugin(() => {
     const config = useRuntimeConfig()
 
     const apiFetch = $fetch.create({
-        baseURL: 'https://jsonplaceholder.typicode.com',
+        baseURL: config.public.apiURL,
         credentials: 'include',
         headers: {
+            ...useRequestHeaders(['cookie']),
             'Content-Type': 'application/json',
             'Accept': 'application/json',
         },
-        async onResponseError({ response}) {
-            // showError({ statusCode: response.status })
-            // throw createError({
-            //     statusCode: 500,
-            //     statusMessage: 'Something bad happened on the server',
-            //     fatal: true
-            //   });
+        onRequest({ request, options }) {
+            const xsrf = useCookie('XSRF-TOKEN')
+            if (xsrf.value) {
+                options.headers['X-XSRF-TOKEN'] = xsrf.value
+            }
 
-            return Promise.reject(response._data)
+            if (process.server) {
+                if (!options.headers.origin) {
+                    options.headers.origin = config.public.appURL
+                }
+            }
+        },
+        async onResponseError({ response}) {
+            if (response.status === 401) {
+                const router = useRouter()
+                return router.push({ name: 'logout' })
+            }
+
+            return Promise.reject('error')
         }
     })
 

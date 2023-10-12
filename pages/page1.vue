@@ -11,5 +11,7 @@
 <script setup>
 import {useLazyAsyncData} from "#app";
 
-const { data, pending } = useLazyAsyncData('page1', () => $fetch('https://staging-api.laravue.com.br/api/courses'))
+const {$apiFetch} = useNuxtApp()
+const {data, pending} = useLazyAsyncData('courses', () => $apiFetch('api/courses'))
+
 </script>
