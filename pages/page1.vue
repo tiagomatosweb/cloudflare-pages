@@ -11,5 +11,5 @@
 <script setup>
 import {useLazyAsyncData} from "#app";
 
-const { data } = useLazyAsyncData('page1', () => $fetch('https://jsonplaceholder.typicode.com/posts'))
+const { data } = useLazyAsyncData('page1', () => $fetch('https://staging-api.laravue.com.br/api/courses'))
 </script>
