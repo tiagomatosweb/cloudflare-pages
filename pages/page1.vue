@@ -12,6 +12,6 @@
 import {useLazyAsyncData} from "#app";
 
 const {$apiFetch} = useNuxtApp()
-const {data, pending} = useLazyAsyncData('courses', () => $apiFetch('api/courses'))
+const {data, pending} = useLazyAsyncData('courses', () => $apiFetch('posts'))
 
 </script>
