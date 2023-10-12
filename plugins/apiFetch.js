@@ -1,7 +1,11 @@
 export default defineNuxtPlugin(() => {
     const apiFetch = $fetch.create({
         baseURL: 'https://jsonplaceholder.typicode.com',
-        credentials: 'include',
+        onRequest(context) {
+            if (process.client) {
+                context.options.credentials = 'include'
+            }
+        }
     })
 
     return {
