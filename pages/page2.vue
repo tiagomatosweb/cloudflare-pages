@@ -9,5 +9,7 @@
 </template>
 
 <script setup>
-const {data, pending} = useLazyAsyncData('page2', () => $fetch('https://jsonplaceholder.typicode.com/posts'))
+const {data, pending} = useLazyAsyncData('page2', () => $fetch('posts', {
+  baseURL: 'https://jsonplaceholder.typicode.com'
+}))
 </script>
