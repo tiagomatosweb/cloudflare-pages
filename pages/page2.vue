@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Page 1</h1>
+    <h1>Page 2</h1>
     <br>
     <pre v-if="!pending">
       {{data}}
@@ -11,7 +11,6 @@
 <script setup>
 import {useLazyAsyncData} from "#app";
 
-const {$apiFetch} = useNuxtApp()
-const {data, pending} = useLazyAsyncData('page1', () => $apiFetch('posts'))
+const {data, pending} = useLazyAsyncData('page2', () => $fetch('https://jsonplaceholder.typicode.com/posts'))
 
 </script>
