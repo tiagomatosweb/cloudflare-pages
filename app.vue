@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout>
-    <VitePwaManifest/>
+    <NuxtPwaManifest/>
 
     Is PWA working?
     <pre>{{ $pwa }}</pre>
@@ -19,7 +19,7 @@
         </button>
       </div>
     </div>
-    test 8
+    test 9
     <NuxtPage/>
   </NuxtLayout>
 </template>
