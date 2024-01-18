@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
   ],
   pwa: {
+    periodicSyncForUpdates: '5',
     manifest: {
       name: 'Assurance'
     },

@@ -19,7 +19,11 @@
         </button>
       </div>
     </div>
-    test 4
+    test 5
     <NuxtPage/>
   </NuxtLayout>
 </template>
+
+<script setup>
+const { $pwa } = useNuxtApp()
+</script>
