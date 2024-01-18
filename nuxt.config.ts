@@ -7,6 +7,9 @@ export default defineNuxtConfig({
       apiURL: process.env.NUXT_PUBLIC_API_URL,
     }
   },
+  appConfig: {
+    buildDate: new Date().toISOString(),
+  },
   modules: [
     '@vite-pwa/nuxt',
   ],
