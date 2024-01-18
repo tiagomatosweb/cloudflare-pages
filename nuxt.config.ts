@@ -15,7 +15,7 @@ export default defineNuxtConfig({
       name: 'Assurance'
     },
     workbox: {
-      navigateFallback: "/", // Fallback to index.html
+      navigateFallback: null, // Fallback to index.html
       globPatterns: [
         "**/*.{js,css,html,png,jpg,jpeg,svg,woff2,woff,ttf,eot,webmanifest}",
       ],
