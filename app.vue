@@ -19,7 +19,7 @@
         </button>
       </div>
     </div>
-    test 7
+    test 8
     <NuxtPage/>
   </NuxtLayout>
 </template>
