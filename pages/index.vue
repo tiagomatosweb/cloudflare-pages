@@ -20,10 +20,10 @@
         </button>
       </div>
     </div>
-    test 10
+    test 11
   </div>
 </template>
 
 <script setup>
-  // const {data, pending, status, error} = useLazyAsyncData(() => $fetch(`https://jsonplaceholder.typicode.com/posts`))
+const { $pwa } = useNuxtApp()
 </script>
