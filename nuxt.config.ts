@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
   ],
   pwa: {
-    periodicSyncForUpdates: '5',
+    registerType: 'autoUpdate',
     manifest: {
       name: 'Assurance',
       icons: [
@@ -23,18 +23,17 @@ export default defineNuxtConfig({
       ]
     },
     workbox: {
-      navigateFallback: null, // Fallback to index.html
-      globPatterns: [
-        "**/*.{js,css,html,png,jpg,jpeg,svg,woff2,woff,ttf,eot,webmanifest}",
-      ],
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
     },
     client: {
       installPrompt: true,
+      periodicSyncForUpdates: 20,
     },
-    registerWebManifestInRouteRules: true,
     devOptions: {
       enabled: true,
+      suppressWarnings: true,
+      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',
     },
-    registerType: "autoUpdate",
   },
 })
