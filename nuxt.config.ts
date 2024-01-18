@@ -13,7 +13,14 @@ export default defineNuxtConfig({
   pwa: {
     periodicSyncForUpdates: '5',
     manifest: {
-      name: 'Assurance'
+      name: 'Assurance',
+      icons: [
+        {
+          src: 'icons/512x512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
     },
     workbox: {
       navigateFallback: null, // Fallback to index.html
