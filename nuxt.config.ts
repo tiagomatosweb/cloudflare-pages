@@ -1,10 +1,32 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // ssr: false,
+  ssr: false,
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
       apiURL: process.env.NUXT_PUBLIC_API_URL,
     }
+  },
+  modules: [
+    '@vite-pwa/nuxt',
+  ],
+  pwa: {
+    manifest: {
+      name: 'Assurance'
+    },
+    workbox: {
+      navigateFallback: "/", // Fallback to index.html
+      globPatterns: [
+        "**/*.{js,css,html,png,jpg,jpeg,svg,woff2,woff,ttf,eot,webmanifest}",
+      ],
+    },
+    client: {
+      installPrompt: true,
+    },
+    registerWebManifestInRouteRules: true,
+    devOptions: {
+      enabled: true,
+    },
+    registerType: "autoUpdate",
   },
 })
