@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
   ],
   pwa: {
-    registerType: 'autoUpdate',
     manifest: {
       name: 'Assurance',
       icons: [
