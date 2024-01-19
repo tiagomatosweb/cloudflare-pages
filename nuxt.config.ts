@@ -31,12 +31,12 @@ export default defineNuxtConfig({
       installPrompt: true,
       periodicSyncForUpdates: 20,
     },
-    devOptions: {
-      enabled: true,
-      suppressWarnings: true,
-      navigateFallbackAllowlist: [/^\/$/],
-      type: 'module',
-    },
+    // devOptions: {
+    //   enabled: true,
+    //   suppressWarnings: true,
+    //   navigateFallbackAllowlist: [/^\/$/],
+    //   type: 'module',
+    // },
   },
 })
 
