@@ -16,13 +16,6 @@ export default defineNuxtConfig({
   pwa: {
     manifest: {
       name: 'Assurance',
-      icons: [
-        // {
-        //   src: 'icons/512x512.png',
-        //   sizes: '512x512',
-        //   type: 'image/png'
-        // }
-      ]
     },
     workbox: {
       globPatterns: ['**/*.{js,css}'],
@@ -32,12 +25,6 @@ export default defineNuxtConfig({
       installPrompt: true,
       periodicSyncForUpdates: 20,
     },
-    // devOptions: {
-    //   enabled: true,
-    //   suppressWarnings: true,
-    //   navigateFallbackAllowlist: [/^\/$/],
-    //   type: 'module',
-    // },
   },
 })
 
