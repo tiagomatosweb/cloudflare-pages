@@ -39,3 +39,10 @@ export default defineNuxtConfig({
     },
   },
 })
+
+
+// workbox-7cfec069.js:1 Uncaught (in promise) non-precached-url: non-precached-url :: [{"url":"/"}]
+// at O.createHandlerBoundToURL (https://test.tiagomatos.com/workbox-7cfec069.js:1:13245)
+// at Object.createHandlerBoundToURL (https://test.tiagomatos.com/workbox-7cfec069.js:1:14828)
+// at https://test.tiagomatos.com/sw.js:1:1376
+//     at https://test.tiagomatos.com/sw.js:1:565
