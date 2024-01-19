@@ -17,11 +17,11 @@ export default defineNuxtConfig({
     manifest: {
       name: 'Assurance',
       icons: [
-        {
-          src: 'icons/512x512.png',
-          sizes: '512x512',
-          type: 'image/png'
-        }
+        // {
+        //   src: 'icons/512x512.png',
+        //   sizes: '512x512',
+        //   type: 'image/png'
+        // }
       ]
     },
     workbox: {
