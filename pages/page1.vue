@@ -1,8 +1,8 @@
 <template>
   <div>
     <h1>Page 1</h1>
-    <br>
-    <pre v-if="!pending">
+    <div v-if="pending">Loading</div>
+    <pre v-else>
       {{data}}
     </pre>
   </div>
@@ -10,5 +10,5 @@
 
 <script setup>
 const {$apiFetch} = useNuxtApp()
-const {data, pending} = useLazyAsyncData('page1', () => $apiFetch('posts'))
+const {data, pending} = await useAsyncData('page1', () => $apiFetch('posts'))
 </script>

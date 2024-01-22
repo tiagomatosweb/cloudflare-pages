@@ -11,9 +11,8 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@vite-pwa/nuxt": "^0.4.0",
-    "nuxt": "^3.7.4",
-    "vue": "^3.3.4",
+    "nuxt": "^3.9.3",
+    "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   },
   "packageManager": "yarn@1.22.19"

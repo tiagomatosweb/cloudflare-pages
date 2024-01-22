@@ -1,15 +1,14 @@
 <template>
   <div>
     <h1>Page 2</h1>
-    <br>
-    <pre v-if="!pending">
+    <div v-if="pending">Loading</div>
+    <pre v-else>
       {{data}}
     </pre>
   </div>
 </template>
 
 <script setup>
-const {data, pending} = useLazyAsyncData('page2', () => $fetch('posts', {
-  baseURL: 'https://jsonplaceholder.typicode.com'
-}))
+const {$apiFetch} = useNuxtApp()
+const {data, pending} = await useAsyncData('page2', () => $apiFetch('users'))
 </script>
